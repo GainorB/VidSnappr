@@ -94,6 +94,11 @@ function takePicture() {
     // SET IMAGE FILTER
     image.style.filter = filter;
     // APPEND TO THE DOM
-    photos.appendChild(image);
+    const grabImages = document.querySelectorAll('img');
+    if (grabImages.length >= 1) {
+      photos.insertBefore(image, grabImages[0]);
+    } else {
+      photos.appendChild(image);
+    }
   }
 }
